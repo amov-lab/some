@@ -1,8 +1,0 @@
-[submodule "src/sensor/lidar"]
-	path = src/sensor/lidar
-	url = https://gitee.com/bingobinlw/rplidar_ros
-	branch = master
-[submodule "src/sensor/camera"]
-	path = src/sensor/camera
-	url = https://gitee.com/bingobinlw/realsense-ros
-	branch = master
