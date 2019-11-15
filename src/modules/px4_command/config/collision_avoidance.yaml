@@ -1,0 +1,18 @@
+##Parameter for collision_avoidance.cpp
+
+##  期望位置_x;
+target_x : 8
+
+## 期望位置_y
+target_y : 8
+
+## 期望位置_y
+target_z : 2
+
+##追踪部分位置环P
+p_xy : 0.5
+
+## 总速度最大速度
+vel_sp_max : 0.2
+
+

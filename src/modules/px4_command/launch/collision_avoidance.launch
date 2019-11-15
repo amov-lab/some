@@ -1,0 +1,12 @@
+<launch>
+	<!-- run the position_control.cpp -->
+    <arg name="desire_x" default="0"/>
+    <arg name="desire_y" default="0"/>
+    <arg name="desire_z" default="2"/>
+	<node pkg="px4_command" type="collision_avoidance" name="collision_avoidance" output="screen" launch-prefix="gnome-terminal --tab -e">
+  <rosparam file="$(find px4_command)/config/collision_avoidance.yaml" command="load"/>
+	<param name="target_x"             value="$(arg desire_x)"/>
+	<param name="target_y"             value="$(arg desire_y)"/>
+	<param name="target_z"             value="$(arg desire_z)"/>
+	</node>
+</launch>
