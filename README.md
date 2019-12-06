@@ -2,9 +2,9 @@
 
 此simulation 包含2D、3D激光雷达模型、深度相机模型、双目相机模型、realsense相机模型、IRlock相机模型。
 
-![image](http://files.amovauto.com:8088/group1/default/20191206/16/22/1/Screenshot from 2019-12-06 15-14-03.png)
+![image](https://gitee.com/bingobinlw/some/blob/master/doc/image/gazebo_world.png)
 
-![image](http://files.amovauto.com:8088/group1/default/20191206/16/23/1/Screenshot from 2019-12-06 15-18-54.png)
+![image](https://gitee.com/bingobinlw/some/blob/master/doc/image/sensor_rviz.png)
 
 - 配置PX4以及ros环境
 
