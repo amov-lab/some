@@ -1,13 +1,13 @@
 <launch>
     <!-- vehicle pose -->
-    <arg name="x" default="-71.73"/>
-    <arg name="y" default="104.70"/>
-    <arg name="z" default="5.125"/>
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0"/>
     <arg name="R" default="0"/>
     <arg name="P" default="0"/>
-    <arg name="Y" default="1.61"/>
+    <arg name="Y" default="0"/>
 
-    <arg name="world_path" default="$(find simulation)/worlds/simcity.world" />
+    <arg name="world_path" default="$(find simulation)/worlds/densityColumn.world" />
     <arg name="gui" default="true"/>
     <arg name="ns" default="/"/>
     <arg name="model" default="iris_2Dlidar"/>
