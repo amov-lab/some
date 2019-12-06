@@ -1,3 +1,5 @@
+https://bitbucket.org/osrf/gazebo_models/downloads/
+
 在此目录下下载px4源码并切换v1.9.2的固件
 
 ```
