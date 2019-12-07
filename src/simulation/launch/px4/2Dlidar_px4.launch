@@ -7,7 +7,7 @@
     <arg name="P" default="0"/>
     <arg name="Y" default="0"/>
 
-    <arg name="world_path" default="$(find simulation)/worlds/densityColumn.world" />
+    <arg name="world_path" default="$(find simulation)/worlds/empty_room.world" />
     <arg name="gui" default="true"/>
     <arg name="ns" default="/"/>
     <arg name="model" default="iris_2Dlidar"/>

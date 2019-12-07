@@ -10,7 +10,7 @@
       <uri>model://3Dlidar_16</uri>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
-    <joint name="3Dlidar_VLP16_joint" type="revolute">
+    <joint name="3Dlidar_VLP16_joint" type="fixed">
       <child>3Dlidar_16::link</child>
       <parent>iris::base_link</parent>
       <axis>

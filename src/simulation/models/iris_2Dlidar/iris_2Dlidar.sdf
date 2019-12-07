@@ -8,9 +8,9 @@
 
     <include>
       <uri>model://2Dlidar</uri>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>0 0 0.1 0 0 -3.1415926</pose>
     </include>
-    <joint name="2Dlidar_joint" type="revolute">
+    <joint name="2Dlidar_joint" type="fixed">
       <child>2Dlidar::link</child>
       <parent>iris::base_link</parent>
       <axis>

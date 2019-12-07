@@ -22,7 +22,7 @@
 #include <std_msgs/Float64MultiArray.h>
 using namespace std;
 Eigen::Vector3d vel_sp;     
-float desire_z = 2.5; //期望高度                                 
+float desire_z = 1.5; //期望高度                                 
 void targetVel_cb(const std_msgs::Float64MultiArray::ConstPtr &msg)
 {
   vel_sp[0] =  msg->data.at(0);
