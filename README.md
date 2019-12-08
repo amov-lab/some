@@ -1,3 +1,12 @@
+# Overview
+
+- software frame
+
+![image](http://files.amovauto.com:8088/group1/default/20191208/14/41/1/sofe_frame.png)
+
+- Dir Tree
+
+  ![image](http://files.amovauto.com:8088/group1/default/20191208/14/43/1/some.png)
 # Simulation
 
 此simulation 包含2D、3D激光雷达模型、深度相机模型、双目相机模型、realsense相机模型、IRlock相机模型。
@@ -115,7 +124,7 @@ cd Firmware
 git submodule update --init --recursive
 git checkout v1.9.2
 make distclean
-make px4_sitl_defaule gazebo
+make px4_sitl_default gazebo
 ```
 
 编译成功后运行`source_environment.sh`添加Firmware环境变量,以及gazebo模型路经
@@ -136,7 +145,7 @@ youname@ubuntu:~$ mkdir gazebo_models
 
 下载gazebo模型包 https://bitbucket.org/osrf/gazebo_models/downloads/
 
-把gazebo模型包解压至**gazebo_models**文件夹
+把gazebo模型包解压出来的所有模型文件剪切至**gazebo_models**文件夹
 
 添加**gazebo_models**文件夹路经
 

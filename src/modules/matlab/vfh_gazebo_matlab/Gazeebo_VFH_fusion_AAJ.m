@@ -1,9 +1,5 @@
-%%
 %bingo bingbin.lw@gmail.com
-% 原作者：Adam Fuchs
-% 原仓库：https://github.com/fuchsat93/Husky_VFH_Gazebo
-
-%% 
+% original author:Adam Fuchs  https://github.com/fuchsat93/Husky_VFH_Gazebo
 rosshutdown;
 clc;clear;close all
 % Initialize ROS 

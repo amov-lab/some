@@ -110,9 +110,6 @@ add_executable(filter_tester src/Utilities/filter_tester.cpp)
 add_dependencies(filter_tester px4_command_gencpp)
 target_link_libraries(filter_tester ${catkin_LIBRARIES})
 
-add_executable(TFmini src/Utilities/TFmini.cpp)
-add_dependencies(TFmini px4_command_gencpp)
-target_link_libraries(TFmini ${catkin_LIBRARIES})
 
 add_executable(fake_vicon src/Utilities/fake_vicon.cpp)
 add_dependencies(fake_vicon px4_command_gencpp)
@@ -161,17 +158,9 @@ add_executable(collision_avoidance_matlabvfh src/Application/collision_avoidance
 add_dependencies(collision_avoidance_matlabvfh px4_command_gencpp)
 target_link_libraries(collision_avoidance_matlabvfh ${catkin_LIBRARIES})
 
-add_executable(collision_avoidance_streo src/Application/collision_avoidance_streo.cpp)
-add_dependencies(collision_avoidance_streo px4_command_gencpp)
-target_link_libraries(collision_avoidance_streo ${catkin_LIBRARIES})
-
 add_executable(payload_drop src/Application/payload_drop.cpp)
 add_dependencies(payload_drop px4_command_gencpp)
 target_link_libraries(payload_drop ${catkin_LIBRARIES})
-
-add_executable(formation_control_sitl src/Application/formation_control_sitl.cpp)
-add_dependencies(formation_control_sitl px4_command_gencpp)
-target_link_libraries(formation_control_sitl ${catkin_LIBRARIES})
 
 
 #############

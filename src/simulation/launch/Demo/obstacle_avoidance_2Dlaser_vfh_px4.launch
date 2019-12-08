@@ -1,10 +1,12 @@
 <launch> 
-  <include file="$(dirname)/../launch/px4/2Dlidar_px4.launch"/>
-  <include file="$(find px4_command)/launch/collision_avoidance.launch" >
-        <arg name="desire_x" value="7"/>
-        <arg name="desire_y" value="7"/>
-        <arg name="desire_z" value="1"/>
+  <arg name="world_path" default="$(find simulation)/worlds/densityColumn.world" />
+
+  <include file="$(find simulation)/launch/px4/2Dlidar_px4.launch">
+    <arg name="world_path" value="$(arg world_path)" />
   </include>
+  <include file="$(find px4_command)/launch/collision_avoidance_vfh.launch" >
+  </include>
+
 	<node pkg="px4_command" type="set_mode" name="set_mode" output="screen" launch-prefix="gnome-terminal --tab -e">
     </node>
 </launch>
