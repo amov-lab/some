@@ -13,7 +13,7 @@
 
 ![image](http://files.amovauto.com:8088/group1/default/20191206/18/07/1/gazebo_world.jpg)
 
-![image](http://files.amovauto.com:8088/group1/default/20191206/18/08/1/sensor_rviz.jpg)
+![image](http://files.amovauto.com:8088/group1/default/20191209/15/50/1/sensor_rviz.png)
 
 - 配置PX4以及ros环境
 
