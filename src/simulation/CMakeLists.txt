@@ -4,6 +4,7 @@ project(simulation)
 # Load catkin and all dependencies required for this package
 find_package(catkin REQUIRED COMPONENTS
     roscpp
+	rospy
     gazebo_ros
     image_transport
     camera_info_manager

@@ -37,7 +37,7 @@ sudo apt-get install ros-kinetic-hector-slam
 ```
 sudo apt-get install ros-melodic-hector-slam
 ```
-- karto_slam
+- cartographer_slam
   for ubuntu 16.04:
 
 ```

@@ -31,6 +31,8 @@ git clone https://gitee.com/bingobinlw/some
 
 在ubuntu 16.04或18.04已测试通过
 
+建议安装gazebo9
+
 这里给出ubuntu16.04安装步骤
 
 ### ROS
@@ -151,7 +153,16 @@ youname@ubuntu:~$ mkdir gazebo_models
 
 ```
 echo "export GAZEBO_MODEL_PATH=:~/gazebo_models" >> ~/.bashrc
+source ~/.bashrc
 ```
+
+然后在任意终端中打开gazebo
+
+```
+gazebo
+```
+
+在gazebo 界面insert选项中确保**gazebo_models**模型包被跟踪
 
 ## 编译工作空间，运行launch文件
 
