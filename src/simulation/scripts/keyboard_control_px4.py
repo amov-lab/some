@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#author : bingo
+#email  : bingobin.lw@gmail.com
+#description  :  px4 controlled by keyboard 
 import rospy
 from geometry_msgs.msg import Twist
 import sys, select, termios, tty
