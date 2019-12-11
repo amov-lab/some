@@ -119,7 +119,7 @@ cd ~/some
 git clone https://gitee.com/bingobinlw/Firmware
 ```
 
-然后更新submhttp://files.amovauto.com:8088/group1/default/20191211/14/11/1/gmapping_slam.pngodule 切换固件并编译
+然后更新submodule切换固件并编译
 
 ```
 cd Firmware
