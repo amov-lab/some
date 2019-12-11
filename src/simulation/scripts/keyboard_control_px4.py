@@ -17,7 +17,10 @@ import time
 import math
 
 msg = """
-Control PX4 UAV!
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+If you use this script, please read readme.md first.
+dir:some/src/simulation/scripts/README.md
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 %%%%%%%%%%%%%%%%%%%%%%%
 action_control:
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +43,6 @@ command_cotrol
 3 : LAND
 4 : POSCTL
 5 : ATTITCTL
-SPACE : RISE
 ---------------------------
 
 CTRL-C to quit

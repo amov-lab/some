@@ -119,7 +119,7 @@ cd ~/some
 git clone https://gitee.com/bingobinlw/Firmware
 ```
 
-然后更新submodule 切换固件并编译
+然后更新submhttp://files.amovauto.com:8088/group1/default/20191211/14/11/1/gmapping_slam.pngodule 切换固件并编译
 
 ```
 cd Firmware
@@ -180,3 +180,31 @@ source ~/.bashrc
 roslaunch simulation models_demo_test_px4.launch
 ```
 
+# slam
+
+运行slam-Demo之前请先安装必要的功能包，具体请看
+
+```
+roscd ros_slam
+查看README.md
+```
+
+## gmapping_slam
+
+运行
+
+```
+roslaunch simulation gmapping_demo_px4.launch
+```
+
+![image](http://files.amovauto.com:8088/group1/default/20191211/14/11/1/gmapping_slam.png)
+
+同时会出现一飞机控制界面，要想使用此脚本请先查看下面路经的README.md
+
+```
+dir:some/src/simulation/scripts/README.md
+```
+
+
+
+![image](http://files.amovauto.com:8088/group1/default/20191211/14/17/1/keyboard_control.png)

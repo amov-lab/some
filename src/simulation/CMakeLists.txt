@@ -63,7 +63,11 @@ add_library(
 )
 target_link_libraries(irlock_gazebo_ros_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 add_dependencies(irlock_gazebo_ros_plugin ${catkin_EXPORTED_TARGETS})
-  
+
+  install(PROGRAMS 
+   scripts/keyboard_control_px4.py 
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 install(DIRECTORY models DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY worlds DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
