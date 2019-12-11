@@ -207,4 +207,4 @@ dir:some/src/simulation/scripts/README.md
 
 
 
-![image](http://files.amovauto.com:8088/group1/default/20191211/14/17/1/keyboard_control.png)
+![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)

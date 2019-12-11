@@ -24,10 +24,10 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 %%%%%%%%%%%%%%%%%%%%%%%
 action_control:
 %%%%%%%%%%%%%%%%%%%%%%%
-        w    
-   a    s    d
-w and s : pitch control
-a and d : roll control
+        e    
+   s    d    f
+e and d : pitch control
+s and f : roll control
 ---------------------------
         i    
    j    k    l
