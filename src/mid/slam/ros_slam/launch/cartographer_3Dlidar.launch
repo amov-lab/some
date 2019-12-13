@@ -6,8 +6,7 @@
           -configuration_directory  $(find slam_sim_demo)/param
           -configuration_basename cartographer_params.lua"
       output="screen">
-    <remap from="scan" to="/scan" />
-    <remap from="points2" to="/camera/depth/points"/>
+    <remap from="scan" to="/2Dlidar_scan" />
   </node>
 
   <!--node name="flat_world_imu_node" pkg="cartographer_turtlebot"
@@ -18,7 +17,7 @@
 
 
   <node name="rviz" pkg="rviz" type="rviz" required="true"
-      args="-d $(find slam_sim_demo)/rviz/cartographer.rviz" />
+      args="-d $(find ros_slam)/rviz/cartographer.rviz" />
 
 
 
@@ -32,7 +31,7 @@
           -configuration_directory $(find cartographer_ros)/configuration_files
           -configuration_basename xbot-u.lua"
       output="screen">
-    <remap from="scan" to="/scan" />
+    <remap from="scan" to="/2Dlidar_scan" />
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"

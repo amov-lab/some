@@ -41,13 +41,13 @@ sudo apt-get install ros-melodic-hector-slam
   for ubuntu 16.04:
 
 ```
-sudo apt-get install ros-kinetic-cartographer
+sudo apt-get install ros-kinetic-cartographer*
 ```
 
 ​       for ubuntu 18.04:
 
 ```
-sudo apt-get install ros-melodic-cartographer
+sudo apt-get install ros-melodic-cartographer*
 ```
 
  

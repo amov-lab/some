@@ -65,13 +65,13 @@ git clone https://gitee.com/bingobinlw/some
   For Gazebo 8,
 
   ```
-  sudo apt install ros-kinetic-gazebo8-*
+  sudo apt install ros-kinetic-gazebo8*
   ```
 
   For Gazebo 9,
 
   ```
-  sudo apt install ros-kinetic-gazebo9-*
+  sudo apt install ros-kinetic-gazebo9*
   ```
 
 1. Initialize rosdep.
