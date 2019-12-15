@@ -1,7 +1,7 @@
 <launch>
   <arg name="scan_topic"  default="/2Dlidar_scan" />
-  <arg name="base_frame"  default="fcu"/>
-  <arg name="odom_frame"  default="local_origin"/>
+  <arg name="base_frame"  default="base_link"/>
+  <arg name="odom_frame"  default="odom"/>
 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
     <param name="base_frame" value="$(arg base_frame)"/>   <!--底盘坐标系-->

@@ -9,7 +9,6 @@ find_package(catkin REQUIRED COMPONENTS
 	gazebo_ros
 	slam_karto
 	gmapping
-	amcl
 	hector_mapping
 )
 

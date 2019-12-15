@@ -1,3 +1,7 @@
+- Overview
+- Simulation
+- Slam
+- Planning
 # Overview
 
 - software frame
@@ -180,7 +184,7 @@ source ~/.bashrc
 roslaunch simulation models_demo_test_px4.launch
 ```
 
-# slam
+# Slam
 
 运行slam-Demo之前请先安装必要的功能包，具体请看
 
@@ -197,7 +201,7 @@ roscd ros_slam
 roslaunch simulation gmapping_demo_px4.launch
 ```
 
-![image](http://files.amovauto.com:8088/group1/default/20191211/14/11/1/gmapping_slam.png)
+![image](http://files.amovauto.com:8088/group1/default/20191215/21/46/1/gmapping_map.png)
 
 同时会出现一飞机控制界面，要想使用此脚本请先查看下面路经的README.md
 
@@ -208,3 +212,39 @@ dir:some/src/simulation/scripts/README.md
 
 
 ![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)
+## cartographer
+cartographer在2019年10月份已经支持以ros包形式安装。若想运行此demo请先安装必要cartogra包。具体请看ros_slam包中的**README.md**
+
+### 2Dlidar location
+
+运行demo之前请先在QGC参数表中配置参数，选择EKF位置来源来自板载计算机
+
+```
+EKF2_AID_MASK = 24
+```
+
+cartographer2Dlidar_demo_px4.launch的默认是定位模式，cartogra节点将接收2d激光雷达以及无人机的imu话题。
+
+```
+roslaunch simulation cartographer2Dlidar_location_demo_px4.launch
+```
+
+结果
+
+![image](http://files.amovauto.com:8088/group1/default/20191215/22/03/1/carto_use_imu.png)
+
+### 2Dlidar mapping
+
+如果你想建立更加准确的地图，而且你的robot已经拥有里程计。那么cartogra能够生成准切而稳定的map，不会存在location模式中地图会飘的情况。
+
+运行demo之前请先在QGC参数表中配置参数，选择EKF位置来源来自gps
+
+```
+EKF2_AID_MASK = 1
+```
+
+cartogra节点将接收2d激光雷达以及无人机的里程计话题
+
+```
+roslaunch simulation cartographer2Dlidar_mapping_demo_px4.launch
+```

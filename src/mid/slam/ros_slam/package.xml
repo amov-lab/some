@@ -2,7 +2,7 @@
   <name>ros_slam</name>
   <version>0.0.1</version>
   <description>
-  A SLAM demo of px4, with gmapping, karto, AMCL and cartographer.
+  A SLAM demo of px4, with gmapping, karto, and cartographer.
   </description>
   <author>lw bingo</author>
   <maintainer email="bingobin.lw@gmail.com">lw bingo</maintainer>
@@ -29,7 +29,6 @@
   <run_depend>message_runtime</run_depend>
   <run_depend>xacro</run_depend>
   <run_depend>slam_karto</run_depend>
-  <run_depend>amcl</run_depend>
   <run_depend>gmapping</run_depend>
   <run_depend>hector_mapping</run_depend>
 

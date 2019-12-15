@@ -8,6 +8,7 @@
     <arg name="Y" default="0"/>
 
     <arg name="world_path" default="$(find simulation)/worlds/empty_room.world" />
+    <arg name="px4_config" default="$(find simulation)/resource/px4_config.yaml" />
     <arg name="gui" default="true"/>
     <arg name="ns" default="/"/>
     <arg name="model" default="iris_2Dlidar"/>
@@ -19,9 +20,9 @@
 
     <param name="use_sim_time" value="true" />
 
-  <!-- Define a static transform from a lidar internal frame to the fcu for every camera used -->
+  <!-- Define a static transform from a lidar internal frame to the uav for lidar,根据实际的lidar安装方向，可改变lidar的tf -->
   <node pkg="tf" type="static_transform_publisher" name="tf_2Dlidar"
-          args="0 0 0 0 0 0 fcu 2Dlidar_link 10"/>
+          args="0 0 0 -3.1415926 0 0 base_link 2Dlidar_link 10"/>
 
 
     <!-- Launch PX4 SITL -->
@@ -34,7 +35,7 @@
         <include file="$(find mavros)/launch/node.launch">
             <arg name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
             <!-- Need to change the config file to get the tf topic and get local position in terms of local origin -->
-            <arg name="config_yaml" value="$(find simulation)/resource/px4_config.yaml" />
+            <arg name="config_yaml" value="$(arg px4_config)" />
             <arg name="fcu_url" value="$(arg fcu_url)" />
             <arg name="gcs_url" value="$(arg gcs_url)" />
             <arg name="tgt_system" value="$(arg tgt_system)" />

@@ -1,7 +1,7 @@
 <launch>
 	<!-- run the position_control.cpp -->
 
-	<node pkg="px4_command" type="px4_pos_estimator" name="px4_pos_estimator" output="screen">
+	<node pkg="px4_command" type="px4_pos_estimator" name="px4_pos_estimator" output="screen" launch-prefix="gnome-terminal --tab -e">
 
 		<!-- load blacklist, config -->
                 <rosparam command="load" file="$(find px4_command)/config/Parameter_for_control.yaml" />

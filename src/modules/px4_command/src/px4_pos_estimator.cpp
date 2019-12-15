@@ -95,33 +95,25 @@ void printf_param();
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>回调函数<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 void laser_cb(const tf2_msgs::TFMessage::ConstPtr& msg)
 {
+ 	cout << "laser_cb"<<endl;
     //确定是cartographer发出来的/tf信息
     //有的时候/tf这个消息的发布者不止一个
-    if (msg->transforms[0].header.frame_id == "map")
+    if (msg->transforms[0].header.frame_id == "carto_odom")
     {
         laser = msg->transforms[0];
-
-        float dt_laser;
-
-        dt_laser = (laser.header.stamp.sec - laser_last.header.stamp.sec) + (laser.header.stamp.nsec - laser_last.header.stamp.nsec)/10e9;
-
-        //这里需要做这个判断是因为cartographer发布位置时有一个小bug，ENU到NED不展开讲。
-        if (dt_laser != 0)
-        {
+		cout << "tran"<<endl;
             //位置 xy  [将解算的位置从laser坐标系转换至ENU坐标系]???
-            pos_drone_laser[0]  = laser.transform.translation.x;
-            pos_drone_laser[1]  = laser.transform.translation.y;
+        pos_drone_laser[0]  = laser.transform.translation.x;
+        pos_drone_laser[1]  = laser.transform.translation.y;
 
             // Read the Quaternion from the Carto Package [Frame: Laser[ENU]]
-            Eigen::Quaterniond q_laser_enu(laser.transform.rotation.w, laser.transform.rotation.x, laser.transform.rotation.y, laser.transform.rotation.z);
+        Eigen::Quaterniond q_laser_enu(laser.transform.rotation.w, laser.transform.rotation.x, laser.transform.rotation.y, laser.transform.rotation.z);
 
-            q_laser = q_laser_enu;
+        q_laser = q_laser_enu;
 
-            // Transform the Quaternion to Euler Angles
-            Euler_laser = quaternion_to_euler(q_laser);
-        }
+         // Transform the Quaternion to Euler Angles
+        Euler_laser = quaternion_to_euler(q_laser);
 
-        laser_last = laser;
     }
 }
 void sonic_cb(const std_msgs::UInt16::ConstPtr& msg)
@@ -303,7 +295,7 @@ int main(int argc, char **argv)
         drone_state_pub.publish(_DroneState);
 
         // 打印
-        // printf_info();
+    //     printf_info();
         rate.sleep();
     }
 

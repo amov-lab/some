@@ -24,7 +24,7 @@ disturbance_end_time : 30.0
 ## parameter for px4_pos_estimator.cpp
 pos_estimator:
   ## 使用激光SLAM数据orVicon数据 0 for vicon， 1 for 激光SLAM
-  flag_use_laser_or_vicon : 0
+  flag_use_laser_or_vicon : 1
   ## 0 for use the data from fcu, 1 for use the mocap raw data(only position), 2 for use the mocap raw data(position and velocity)
   Use_mocap_raw : 0
   linear_window : 3

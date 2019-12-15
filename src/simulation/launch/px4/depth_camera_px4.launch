@@ -13,11 +13,11 @@
 
   <!-- Define a static transform from a camera internal frame to the fcu for every camera used -->
   <node pkg="tf" type="static_transform_publisher" name="tf_2Dlidar"
-          args="0 0 0 -1.57 0 -1.57 fcu depth_camera_link 10"/>
+          args="0 0 0 -1.57 0 -1.57 base_link depth_camera_link 10"/>
 
     <!-- Ros transformation -->
     <node pkg="tf" type="static_transform_publisher" name="tf_local_origin"
-          args="0 0 0 0 0 0 world local_origin 10"/>
+          args="0 0 0 0 0 0 world odom 10"/>
 
     <!-- Launch PX4 SITL -->
     <include file="$(find px4)/launch/px4.launch">
