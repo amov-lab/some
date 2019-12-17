@@ -239,7 +239,7 @@ cartographer在2019年10月份已经支持以ros包形式安装。若想运行�
 EKF2_AID_MASK = 24
 ```
 
-cartographer2Dlidar_demo_px4.launch的默认是定位模式，cartogra节点将接收2d激光雷达以及无人机的imu话题。
+cartogra节点将接收2d激光雷达以及无人机的imu话题。
 
 ```
 roslaunch simulation cartographer2Dlidar_location_demo_px4.launch
