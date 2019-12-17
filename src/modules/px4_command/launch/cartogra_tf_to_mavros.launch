@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="px4_command" type="position_to_mavros_node" name="position_to_mavros" output="screen" >
+    </node>
+</launch>
