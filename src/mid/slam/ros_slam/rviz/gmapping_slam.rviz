@@ -54,8 +54,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 0.17213498055934906
-        Min Value: -0.2463332861661911
+        Max Value: 0.24753296375274658
+        Min Value: -0.1728772073984146
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -102,10 +102,6 @@ Visualization Manager:
           Value: true
         base_link_frd:
           Value: true
-        fcu:
-          Value: true
-        local_origin:
-          Value: true
         map:
           Value: true
         map_ned:
@@ -121,12 +117,16 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          local_origin:
-            fcu:
-              2Dlidar_link:
-                {}
           map_ned:
             {}
+          odom:
+            base_link:
+              2Dlidar_link:
+                {}
+              base_link_frd:
+                {}
+            odom_ned:
+              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -157,7 +157,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 20.338748931884766
+      Distance: 22.779399871826172
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -172,10 +172,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8953977823257446
+      Pitch: 1.424796462059021
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.7454034090042114
+      Yaw: 3.03540301322937
     Saved: ~
 Window Geometry:
   Displays:
@@ -194,4 +194,4 @@ Window Geometry:
     collapsed: true
   Width: 1200
   X: 295
-  Y: 138
+  Y: 108

@@ -1,5 +1,7 @@
 <launch>
-    <arg name="world_path" default="$(find simulation)/worlds/empty.world" />
+    <arg name="world_path" default="$(find simulation)/worlds/cloister.world" />
+    <arg name="px4_config" default="$(find simulation)/resource/px4_config.yaml" />
+
     <arg name="gui" default="true"/>
     <arg name="ns" default="/"/>
     <arg name="model" default="iris_3Dlidar"/>
@@ -13,11 +15,8 @@
 
   <!-- Define a static transform from a lidar internal frame to the fcu for every camera used -->
   <node pkg="tf" type="static_transform_publisher" name="tf_3Dlidar"
-          args="0 0 0 -1.57 0 -1.57 base_link 3Dlidar_16_link 10"/>
+          args="0 0 0 0 0 0 base_link 3Dlidar_16_link 20"/>
 
-    <!-- Ros transformation -->
-    <node pkg="tf" type="static_transform_publisher" name="tf_local_origin"
-          args="0 0 0 0 0 0 world odom 10"/>
 
     <!-- Launch PX4 SITL -->
     <include file="$(find px4)/launch/px4.launch">
@@ -29,7 +28,7 @@
         <include file="$(find mavros)/launch/node.launch">
             <arg name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
             <!-- Need to change the config file to get the tf topic and get local position in terms of local origin -->
-            <arg name="config_yaml" value="$(find simulation)/resource/px4_config.yaml" />
+            <arg name="config_yaml" value="$(arg px4_config)" />
             <arg name="fcu_url" value="$(arg fcu_url)" />
             <arg name="gcs_url" value="$(arg gcs_url)" />
             <arg name="tgt_system" value="$(arg tgt_system)" />

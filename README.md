@@ -10,7 +10,7 @@
 
 - Dir Tree
 
-  ![image](http://files.amovauto.com:8088/group1/default/20191208/14/43/1/some.png)
+![image](http://files.amovauto.com:8088/group1/default/20191208/14/43/1/some.png)
 # Simulation
 
 此simulation 包含2D、3D激光雷达模型、深度相机模型、双目相机模型、realsense相机模型、IRlock相机模型。
@@ -178,6 +178,22 @@ echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
+运行demo之前请先下载3Dlidar仿真相关的插件包
+
+for ubuntu 16.04
+
+```
+sudo apt-get install ros-kinetic-velodyne-gazebo-plugins
+```
+
+for ubuntu 18.04
+
+```
+sudo apt-get install ros-melodic-velodyne-gazebo-plugins
+```
+
+
+
 运行model demo launch文件
 
 ```
@@ -229,6 +245,8 @@ cartographer2Dlidar_demo_px4.launch的默认是定位模式，cartogra节点将�
 roslaunch simulation cartographer2Dlidar_location_demo_px4.launch
 ```
 
+在定位之前请在键盘控制界面用键盘的**'g'**键调整uav的允许速度为1570，降低uav的运动时的倾斜角度以及速度，以达到更好的定位效果。
+
 结果
 
 ![image](http://files.amovauto.com:8088/group1/default/20191215/22/03/1/carto_use_imu.png)
@@ -248,3 +266,30 @@ cartogra节点将接收2d激光雷达以及无人机的里程计话题
 ```
 roslaunch simulation cartographer2Dlidar_mapping_demo_px4.launch
 ```
+
+### 3Dlidar location
+
+使用运行demo之前请先确保以安装3D雷达相关插件
+
+for ubuntu 16.04
+
+```
+sudo apt-get install ros-kinetic-velodyne-gazebo-plugins
+```
+
+for ubuntu 18.04
+
+```
+sudo apt-get install ros-melodic-velodyne-gazebo-plugins
+```
+
+使用一个16线的激光雷达，以及一个imu数据，激光雷达水平安装在飞机的顶部。就其定位效果来看，没有发现2Dlidar定位时会飘的情况，而且无人机速度倾斜角度都可以大幅提高。
+
+![image](http://files.amovauto.com:8088/group1/default/20191217/15/31/1/carto_3D_rviz.png)
+
+运行
+
+```
+roslaunch simulation cartographer3Dlidar_demo_px4.launch
+```
+

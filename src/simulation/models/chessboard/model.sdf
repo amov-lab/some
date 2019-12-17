@@ -30,8 +30,8 @@
             </geometry>
             <material>
                <script>
-                  <uri>model://qrcode/materials/scripts</uri>
-                  <uri>model://qrcode/materials/textures/</uri>
+                  <uri>model://chessboard/materials/scripts</uri>
+                  <uri>model://chessboard/materials/textures/</uri>
                   <name>qrcode/Image</name>
                </script>
             </material>

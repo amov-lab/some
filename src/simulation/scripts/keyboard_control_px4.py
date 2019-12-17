@@ -12,7 +12,6 @@ from mavros_msgs.srv import CommandBool, CommandTOL, SetMode
 from geometry_msgs.msg import PoseStamped, Twist
 from sensor_msgs.msg import Imu, NavSatFix
 from std_msgs.msg import Float32, String
-from pyquaternion import Quaternion
 import time
 import math
 
@@ -33,7 +32,10 @@ s and f : roll control
    j    k    l
 i and k : throttle control
 j and l : yaw control
-
+---------------------------
+g : Speed reduction
+h : Speed increase
+---------------------------
 %%%%%%%%%%%%%%%%%%%%%%%
 command_cotrol
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -48,6 +50,7 @@ command_cotrol
 CTRL-C to quit
 
 """
+speed_control = 1600;
 cur_target_rc_yaw = OverrideRCIn()
 mavros_state = State()
 armServer = rospy.ServiceProxy('/mavros/cmd/arming', CommandBool)
@@ -116,6 +119,7 @@ def command_control():
 			print("Vehicle stabilized failed!")
 
 def action_control():
+	global speed_control
 	#throttle
 	if mavros_state.mode == 'POSCTL':
 		if key == 'i'or key == 'I':
@@ -135,16 +139,16 @@ def action_control():
 		channel1 = 1000
 	#pitch
 	if key == 'e' or key == 'E':
-		channel2 = 1600
+		channel2 = speed_control
 	elif key == 'd' or key == 'D':
-		channel2 = 1400
+		channel2 = 3000-speed_control
 	else:
 		channel2 = 1500
 	#roll
 	if key == 's' or key == 'S':
-		channel0 = 1400
+		channel0 = 3000-speed_control
 	elif key == 'f' or key == 'F':
-		channel0 = 1600
+		channel0 = speed_control
 	else:
 		channel0 = 1500
 	#yaw
@@ -156,8 +160,12 @@ def action_control():
 		channel3 = 1500
 	global cur_target_rc_yaw
 	cur_target_rc_yaw = RCInOverride(channel0,channel1,channel2,channel3)
-
-
+	if key == 'h' or key == 'H':
+		speed_control = speed_control + 10
+		print('Current control speed :',speed_control)
+	elif key == 'g' or key == 'G':
+		speed_control = speed_control - 10
+		print('Current control speed :',speed_control)
 if __name__=="__main__":
 	settings = termios.tcgetattr(sys.stdin)
 	print (msg)

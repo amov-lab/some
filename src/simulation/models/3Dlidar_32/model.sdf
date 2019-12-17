@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.5">
-  <model name="3Dlidar_16">
+  <model name="3Dlidar_32">
     <link name="link">
 
       <inertial>
@@ -18,23 +18,13 @@
 
       <visual name="visual">
         <geometry>
-          <mesh>
-            <uri>model://3Dlidar_16/meshes/VLP16_base_1.dae</uri>
-          </mesh>
+          <box>
+            <size>0.02 0.05 0.05</size>
+          </box>
         </geometry>
       </visual>
 
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>model://3Dlidar_16/meshes/VLP16_base_2.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-
-
-
-   <sensor name='3Dlidar_16' type='ray'>
+   <sensor name='3Dlidar_32' type='ray'>
       <ray>
         <scan>
           <horizontal>
@@ -44,7 +34,7 @@
             <max_angle>3.1415926535897931</max_angle>
           </horizontal>
           <vertical>
-            <samples>16</samples>
+            <samples>32</samples>
             <min_angle>-0.2617993877991494365</min_angle>
             <max_angle>0.2617993877991494365</max_angle>
           </vertical>
@@ -56,14 +46,14 @@
         </range>
       </ray>
       <plugin name='3D_laser' filename='libgazebo_ros_velodyne_laser.so'>
-        <topicName>/3Dlidar16_scan</topicName>
-        <frameName>3Dlidar_16_link</frameName>
+        <topicName>/3Dlidar32_scan</topicName>
+        <frameName>3Dlidar_32_link</frameName>
         <min_range>0.9</min_range>
         <max_range>130</max_range>
 		<gaussianNoise>0.008</gaussianNoise>
       </plugin>
       <always_on>1</always_on>
-      <update_rate>10</update_rate>
+      <update_rate>7</update_rate>
       <visualize>0</visualize>
     </sensor>
 
