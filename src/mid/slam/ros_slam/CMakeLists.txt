@@ -7,9 +7,8 @@ find_package(catkin REQUIRED COMPONENTS
 	message_generation
 	controller_manager
 	gazebo_ros
-	slam_karto
+	cartographer_ros
 	gmapping
-	hector_mapping
 )
 
 

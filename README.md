@@ -169,13 +169,11 @@ gazebo
 在gazebo 界面insert选项中确保**gazebo_models**模型包被跟踪
 
 ## 编译工作空间，运行launch文件
+编译之前，请先下载必要的slam包，具体请到ros_slam包中查看readme.md
 
 ```
-cd ~/some
-catkin_make
-添加bash路经
-echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+roscd ros_slam
+查看README.md
 ```
 
 运行demo之前请先下载3Dlidar仿真相关的插件包
@@ -191,6 +189,15 @@ for ubuntu 18.04
 ```
 sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
+
+```
+cd ~/some
+catkin_make
+添加bash路经
+echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
 
 
 
