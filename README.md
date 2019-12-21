@@ -172,7 +172,7 @@ gazebo
 编译之前，请先下载必要的slam包，具体请到ros_slam包中查看readme.md
 
 ```
-roscd ros_slam
+dir:some/src/mid/slam/ros_slam
 查看README.md
 ```
 
