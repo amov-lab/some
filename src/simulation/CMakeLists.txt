@@ -21,6 +21,8 @@ find_package(Threads REQUIRED)
 add_message_files(
 	FILES
 	IRLock.msg
+        Control.msg
+        
 )
 
 generate_messages(DEPENDENCIES 
