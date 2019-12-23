@@ -35,13 +35,13 @@ git clone https://gitee.com/bingobinlw/some
 
 在ubuntu 16.04或18.04已测试通过
 
-建议安装gazebo9
+建议安装Ubuntu18.04 ,gazebo9
 
-这里给出ubuntu16.04安装步骤
+这里给出ubuntu18.04安装步骤
 
 ### ROS
 
-#### for ubuntu16.04 kinetic
+#### for ubuntu18.04 melodic
 
 1. Add ROS to sources.list.
 
@@ -51,54 +51,44 @@ git clone https://gitee.com/bingobinlw/some
    sudo apt update
    ```
 
-1. Install gazebo with ROS.
+2. Install gazebo with ROS.
 
    ```bash
-   sudo apt-get install ros-kinetic-desktop
+   sudo apt-get install ros-melodic-desktop
    
    # Source ROS
-   source /opt/ros/kinetic/setup.bash
+   source /opt/ros/melodic/setup.bash
    ```
-
-  Full installation of ROS Kinetic comes with Gazebo 7.
-
-  If you are using different version of Gazebo,
 
   please make sure install ros-gazebo related packages
 
-  For Gazebo 8,
-
-  ```
-  sudo apt install ros-kinetic-gazebo8*
-  ```
 
   For Gazebo 9,
 
   ```
-  sudo apt install ros-kinetic-gazebo9*
+  sudo apt install ros-melodic-gazebo9*
   ```
 
-1. Initialize rosdep.
+3. Initialize rosdep.
 
    ```bash
    rosdep init
    rosdep update
    ```
 
-1. Install catkin and create your catkin workspace directory.
+4. Install catkin.
 
    ```bash
    sudo apt install python-catkin-tools
-   mkdir -p ~/catkin_ws/src
    ```
 
-1. Install mavros version 0.29.0 or above. Instructions to install it from sources can be found here: https://dev.px4.io/en/ros/mavros_installation.html. If you want to install using apt, be sure to check that the version is 0.29.0 or greater.
+4. Install mavros version 0.29.0 or above. Instructions to install it from sources can be found here: https://dev.px4.io/en/ros/mavros_installation.html. If you want to install using apt, be sure to check that the version is 0.29.0 or greater.
 
    ```bash
-   sudo apt install ros-kinetic-mavros ros-kinetic-mavros-extras
+   sudo apt install ros-melodic-mavros ros-melodic-mavros-extras
    ```
 
-1. Install the geographiclib dataset
+5. Install the geographiclib dataset
 
    ```bash
    wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
@@ -133,11 +123,6 @@ make distclean
 make px4_sitl_default gazebo
 ```
 
-编译成功后运行`source_environment.sh`添加Firmware环境变量,以及gazebo模型路经
-
-```
-source source_enviroment.sh
-```
 
 
 
@@ -153,21 +138,6 @@ youname@ubuntu:~$ mkdir gazebo_models
 
 把gazebo模型包解压出来的所有模型文件剪切至**gazebo_models**文件夹
 
-添加**gazebo_models**文件夹路经
-
-```
-echo "export GAZEBO_MODEL_PATH=:~/gazebo_models" >> ~/.bashrc
-source ~/.bashrc
-```
-
-然后在任意终端中打开gazebo
-
-```
-gazebo
-```
-
-在gazebo 界面insert选项中确保**gazebo_models**模型包被跟踪
-
 ## 编译工作空间，运行launch文件
 编译之前，请先下载必要的slam包，具体请到ros_slam包中查看readme.md
 
@@ -178,11 +148,6 @@ dir:some/src/mid/slam/ros_slam
 
 运行demo之前请先下载3Dlidar仿真相关的插件包
 
-for ubuntu 16.04
-
-```
-sudo apt-get install ros-kinetic-velodyne-gazebo-plugins
-```
 
 for ubuntu 18.04
 
@@ -194,11 +159,15 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 cd ~/some
 catkin_make
 添加bash路经
-echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+
 ```
 
 
+编译成功后运行`source_environment.sh`添加Firmware环境变量,some gazebo模型路经,gazebo_modles模型路经
+
+```
+source source_enviroment.sh
+```
 
 
 运行model demo launch文件

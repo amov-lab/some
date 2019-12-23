@@ -16,7 +16,7 @@
 
 
 import rospy
-from prius_msgs.msg import Control
+from simulation.msg import Control
 from sensor_msgs.msg import Joy
 
 

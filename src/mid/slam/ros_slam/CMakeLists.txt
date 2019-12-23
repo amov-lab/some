@@ -5,10 +5,8 @@ find_package(catkin REQUIRED COMPONENTS
 	rospy
 	std_msgs
 	message_generation
-	controller_manager
 	gazebo_ros
-	cartographer_ros
-	gmapping
+
 )
 
 
