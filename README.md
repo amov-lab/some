@@ -96,6 +96,8 @@ git clone https://gitee.com/bingobinlw/some
    sudo ./install_geographiclib_datasets.sh
    ```
 
+参考于：http://wiki.ros.org/melodic/Installation/Ubuntu
+
 ### 下载编译px4 Firmware
 
 - 安装必要的工具链
@@ -119,6 +121,8 @@ https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requirements.t
 ```
 source ubuntu.sh
 ```
+
+参考于http://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html
 
 #### 下载编译firmware
 
