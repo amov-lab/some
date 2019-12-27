@@ -96,8 +96,31 @@ git clone https://gitee.com/bingobinlw/some
    sudo ./install_geographiclib_datasets.sh
    ```
 
-
 ### 下载编译px4 Firmware
+
+- 安装必要的工具链
+
+- 下载编译firmware
+
+#### 安装必要的工具链
+
+下载**ubuntu.sh,requirements.txt**
+
+```
+wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh`
+`wget
+```
+
+```
+https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requirements.txt
+```
+
+然后运行：
+```
+source ubuntu.sh
+```
+
+#### 下载编译firmware
 
 在此目录下下载px4源码并切换v1.9.2的固件
 
@@ -263,3 +286,4 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 roslaunch simulation cartographer3Dlidar_demo_px4.launch
 ```
 
+注：如有疑问请在issues提问
