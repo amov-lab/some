@@ -1,0 +1,6 @@
+<launch>
+    <arg name="device" default="/dev/video0" />
+    <node name="usb_cam_node" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="$(arg device)" />
+    </node>
+</launch>

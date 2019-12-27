@@ -33,7 +33,7 @@ git clone https://gitee.com/bingobinlw/some
 
 ## 配置PX4以及ros环境
 
-在ubuntu 16.04或18.04已测试通过
+在18.04已测试通过
 
 建议安装Ubuntu18.04 ,gazebo9
 
