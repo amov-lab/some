@@ -247,12 +247,6 @@ roslaunch simulation cartographer2Dlidar_mapping_demo_px4.launch
 
 使用运行demo之前请先确保以安装3D雷达相关插件
 
-for ubuntu 16.04
-
-```
-sudo apt-get install ros-kinetic-velodyne-gazebo-plugins
-```
-
 for ubuntu 18.04
 
 ```
