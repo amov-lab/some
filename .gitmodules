@@ -5,3 +5,4 @@
 [submodule "src/sensor/lidar/rplidar_ros"]
 	path = src/sensor/lidar/rplidar_ros
 	url = https://gitee.com/bingobinlw/rplidar_ros
+	branch = master
