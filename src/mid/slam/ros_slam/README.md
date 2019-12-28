@@ -1,29 +1,25 @@
 # Install dependencies
 - **gmapping_slam** 
 
-  for ubuntu 16.04:
+     for ubuntu 18.04:
 
-```
-sudo apt-get install ros-kinetic-gmapping
-```
+  ```
+  sudo apt-get install ros-melodic-gmapping
+  ```
 
-​       for ubuntu 18.04:
+- **cartographer_slam**
+   for ubuntu 18.04:
 
-```
-sudo apt-get install ros-melodic-gmapping
-```
+  ```
+  sudo apt-get install ros-melodic-cartographer*
+  ```
 
-- cartographer_slam
-  for ubuntu 16.04:
+- **rtabmap slam**
 
-```
-sudo apt-get install ros-kinetic-cartographer*
-```
+   for ubuntu 18.04:
 
-​       for ubuntu 18.04:
+  ```
+  sudo apt-get install ros-melodic-rtabmap*
+  ```
 
-```
-sudo apt-get install ros-melodic-cartographer*
-```
-
- 
+  
