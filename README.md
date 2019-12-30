@@ -1,7 +1,6 @@
 - Overview
 - Simulation
-- Slam
-- Planning
+- P200
 # Overview
 
 - software frame
@@ -11,6 +10,7 @@
 - Dir Tree
 
 ![image](http://files.amovauto.com:8088/group1/default/20191208/14/43/1/some.png)
+
 # Simulation
 
 此simulation 包含2D、3D激光雷达模型、深度相机模型、双目相机模型、realsense相机模型、IRlock相机模型。
@@ -25,11 +25,7 @@
 
 - 编译工作空间，运行launch文件
 
-下载源码：
 
-```
-git clone https://gitee.com/bingobinlw/some
-```
 
 ## 配置PX4以及ros环境
 
@@ -57,7 +53,8 @@ git clone https://gitee.com/bingobinlw/some
    sudo apt-get install ros-melodic-desktop
    
    # Source ROS
-   source /opt/ros/melodic/setup.bash
+	echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+	source ~/.bashrc
    ```
 
   please make sure install ros-gazebo related packages
@@ -124,19 +121,24 @@ source ubuntu.sh
 
 参考于http://dev.px4.io/master/en/setup/dev_env_linux_ubuntu.html
 
+下载源码：
+
+```
+git clone https://gitee.com/bingobinlw/some
+```
 #### 下载编译firmware
 
 在此目录下下载px4源码并切换v1.9.2的固件
 
 ```
-cd ~/some
+cd some
 git clone https://github.com/PX4/Firmware
 ```
 
 或下载码云中的px4源码
 
 ```
-cd ~/some
+cd some
 git clone https://gitee.com/bingobinlw/Firmware
 ```
 
@@ -183,9 +185,8 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
 
 ```
-cd ~/some
+cd some
 catkin_make
-添加bash路经
 
 ```
 
@@ -203,7 +204,7 @@ source source_enviroment.sh
 roslaunch simulation models_demo_test_px4.launch
 ```
 
-# Slam
+## Slam
 
 运行slam-Demo之前请先安装必要的功能包，具体请看
 
@@ -212,7 +213,7 @@ roscd ros_slam
 查看README.md
 ```
 
-## gmapping_slam
+### gmapping_slam
 
 运行
 
@@ -231,10 +232,10 @@ dir:some/src/simulation/scripts/README.md
 
 
 ![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)
-## cartographer
+### cartographer
 cartographer在2019年10月份已经支持以ros包形式安装。若想运行此demo请先安装必要cartogra包。具体请看ros_slam包中的**README.md**
 
-### 2Dlidar location
+#### 2Dlidar location
 
 运行demo之前请先在QGC参数表中配置参数，选择EKF位置来源来自板载计算机
 
@@ -254,7 +255,7 @@ roslaunch simulation cartographer2Dlidar_location_demo_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20191215/22/03/1/carto_use_imu.png)
 
-### 2Dlidar mapping
+#### 2Dlidar mapping
 
 如果你想建立更加准确的地图，而且你的robot已经拥有里程计。那么cartogra能够生成准切而稳定的map，不会存在location模式中地图会飘的情况。
 
@@ -270,7 +271,7 @@ cartogra节点将接收2d激光雷达以及无人机的里程计话题
 roslaunch simulation cartographer2Dlidar_mapping_demo_px4.launch
 ```
 
-### 3Dlidar location
+#### 3Dlidar location
 
 使用运行demo之前请先确保以安装3D雷达相关插件
 
@@ -289,5 +290,23 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
 roslaunch simulation cartographer3Dlidar_demo_px4.launch
 ```
+# P200
+对于P200的用户来说只需在TX2或none上进行简单几步即可实际测试飞行，对于TX2或none上请使用googel浏览器打开.md文档 
+1. 下载源码：
 
+```
+git clone https://gitee.com/bingobinlw/some
+```
+编译
+```
+cd some
+catkin_make
+```
+添加bash路经
+```
+echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+2. 
 注：如有疑问请在issues提问

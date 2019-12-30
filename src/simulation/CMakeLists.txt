@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(simulation)
 
+find_package(gazebo_ros QUIET)
+if(gazebo_ros_FOUND)
 # Load catkin and all dependencies required for this package
 find_package(catkin REQUIRED COMPONENTS
     roscpp
-	rospy
-    gazebo_ros
+    rospy
     image_transport
     camera_info_manager
     sensor_msgs
@@ -22,7 +23,6 @@ add_message_files(
 	FILES
 	IRLock.msg
         Control.msg
-        
 )
 
 generate_messages(DEPENDENCIES 
@@ -38,10 +38,6 @@ catkin_package(
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
-
-
-
-
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
@@ -49,7 +45,6 @@ include_directories(
     ${GAZEBO_INCLUDE_DIRS}
 )
 link_directories(${GAZEBO_LIBRARY_DIRS})
-
 
 add_library(
     realsense_gazebo_plugin
@@ -69,11 +64,14 @@ add_dependencies(PriusHybridPlugin ${catkin_EXPORTED_TARGETS})
 
 catkin_install_python(PROGRAMS scripts/joystick_translator
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-
   install(PROGRAMS 
    scripts/keyboard_control_px4.py 
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 install(DIRECTORY models DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY worlds DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+else()
+message("ok")
+endif()
+
 
