@@ -290,6 +290,34 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
 roslaunch simulation cartographer3Dlidar_demo_px4.launch
 ```
+### rtabmap slam
+使用深度相机以及室内里程计，为了达到更好的建图效果，其中室内里程计选择用3Dcartogra.
+运行demo之前请先安装必要的rtabmap ros包
+
+```
+sudo apt-get install ros-melodic-rtabmap-ros
+```
+
+请先在QGC参数表中配置参数，选择EKF位置来源来自板载计算机
+
+```
+EKF2_AID_MASK = 24
+```
+
+运行demo
+
+```
+roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
+```
+
+参考于：http://wiki.ros.org/rtabmap_ros
+
+建图效果：
+
+![image](http://files.amovauto.com:8088/group1/default/20191230/22/37/1/rtabmap1.png)
+
+![image](http://files.amovauto.com:8088/group1/default/20191230/22/38/1/rtabmap3.png)
+
 # P200
 对于P200的用户来说只需在TX2或none上进行简单几步即可实际测试飞行，对于TX2或none上请使用googel浏览器打开.md文档 
 1. 下载源码：
@@ -310,3 +338,7 @@ source ~/.bashrc
 
 2. 
 注：如有疑问请在issues提问
+
+```
+
+```
