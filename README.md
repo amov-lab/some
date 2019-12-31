@@ -7,10 +7,6 @@
 
 ![image](http://files.amovauto.com:8088/group1/default/20191208/14/41/1/sofe_frame.png)
 
-- Dir Tree
-
-![image](http://files.amovauto.com:8088/group1/default/20191208/14/43/1/some.png)
-
 # Simulation
 
 此simulation 包含2D、3D激光雷达模型、深度相机模型、双目相机模型、realsense相机模型、IRlock相机模型。
