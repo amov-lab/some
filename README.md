@@ -2,12 +2,28 @@
 
 - Simulation
 
+- Px4_command
+
+- Slam
+
+- image_process
+
+- planning
+
 - P200
+
+- AmovCar
 
   此项目运行环境可以手动安装，或下载已安装好了的iso镜像进行虚拟机安装或实体机安装，链接如下：
 
   链接：https://pan.baidu.com/s/1ybCbPbPSm-QyXUaZPm0GSw
   提取码：jkei
+  
+  运行各demo之前，请先更新一下仓库:
+  
+  ```
+  git pull
+  ```
 # Overview
 
 - software frame
@@ -30,7 +46,7 @@
 
 
 
-## 配置PX4以及ros环境
+## rosla配置PX4以及ros环境
 
 在18.04已测试通过
 
@@ -206,8 +222,35 @@ source source_enviroment.sh
 ```
 roslaunch simulation models_demo_test_px4.launch
 ```
+# Px4_command
 
-## Slam
+px4控制以及上层应用模块
+
+## offboard 模式下走圆形轨迹
+
+运行
+
+```
+roslaunch simulation circular_px4.launch
+```
+
+在键盘控制终端中，输入**0**解锁，然后输入**2**切**offboard**,飞机随后会按照你给定的半径与高度飞行，完成一圈后会自动降落。
+
+## offboard 模式下进行二维VFH避障
+
+运行demo之前，请先在QGC中添加航点，然后上传，VFH节点将读取航点信息，当作目标点。
+
+然后重新运行
+
+```
+roslaunch simulation obstacle_avoidance_2Dlaser_vfh_px4.launch 
+```
+
+![image](http://files.amovauto.com:8088/group1/default/20200101/15/18/1/2dvfh.png)
+
+中间终端为GCG中各航点的平面信息，读取航点成功后，在最后一个控制终端中输入**2**然后回车，VFH节点将开始工作。
+
+# Slam
 
 运行slam-Demo之前请先安装必要的功能包，具体请看
 
@@ -216,7 +259,7 @@ roscd ros_slam
 查看README.md
 ```
 
-### gmapping_slam
+## gmapping_slam
 
 运行
 
@@ -235,10 +278,10 @@ dir:some/src/simulation/scripts/README.md
 
 
 ![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)
-### cartographer
+## cartographer
 cartographer在2019年10月份已经支持以ros包形式安装。若想运行此demo请先安装必要cartogra包。具体请看ros_slam包中的**README.md**
 
-#### 2Dlidar location
+### 2Dlidar location
 
 运行demo之前请先在QGC参数表中配置参数，选择EKF位置来源来自板载计算机
 
@@ -258,7 +301,7 @@ roslaunch simulation cartographer2Dlidar_location_demo_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20191215/22/03/1/carto_use_imu.png)
 
-#### 2Dlidar mapping
+### 2Dlidar mapping
 
 如果你想建立更加准确的地图，而且你的robot已经拥有里程计。那么cartogra能够生成准切而稳定的map，不会存在location模式中地图会飘的情况。
 
@@ -274,7 +317,7 @@ cartogra节点将接收2d激光雷达以及无人机的里程计话题
 roslaunch simulation cartographer2Dlidar_mapping_demo_px4.launch
 ```
 
-#### 3Dlidar location
+### 3Dlidar location
 
 使用运行demo之前请先确保以安装3D雷达相关插件
 
@@ -293,7 +336,7 @@ sudo apt-get install ros-melodic-velodyne-gazebo-plugins
 ```
 roslaunch simulation cartographer3Dlidar_demo_px4.launch
 ```
-### rtabmap slam
+## rtabmap slam
 使用深度相机以及室内里程计，为了达到更好的建图效果，其中室内里程计选择用3Dcartogra.
 运行demo之前请先安装必要的rtabmap ros包
 
