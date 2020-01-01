@@ -24,6 +24,8 @@
   ```
   git pull
   ```
+  **注：如有疑问请在issues提问**
+
 # Overview
 
 - software frame
@@ -233,7 +235,15 @@ px4控制以及上层应用模块
 ```
 roslaunch simulation circular_px4.launch
 ```
+同时会出现一飞机控制界面，要想使用此脚本请先查看下面路经的README.md
 
+```
+dir:some/src/simulation/scripts/README.md
+```
+
+
+
+![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)
 在键盘控制终端中，输入**0**解锁，然后输入**2**切**offboard**,飞机随后会按照你给定的半径与高度飞行，完成一圈后会自动降落。
 
 ## offboard 模式下进行二维VFH避障
@@ -269,15 +279,7 @@ roslaunch simulation gmapping_demo_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20191215/21/46/1/gmapping_map.png)
 
-同时会出现一飞机控制界面，要想使用此脚本请先查看下面路经的README.md
 
-```
-dir:some/src/simulation/scripts/README.md
-```
-
-
-
-![image](http://files.amovauto.com:8088/group1/default/20191211/14/46/1/keyboard_control.png)
 ## cartographer
 cartographer在2019年10月份已经支持以ros包形式安装。若想运行此demo请先安装必要cartogra包。具体请看ros_slam包中的**README.md**
 
@@ -365,26 +367,6 @@ roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
 ![image](http://files.amovauto.com:8088/group1/default/20191230/22/38/1/rtabmap3.png)
 
 # P200
-对于P200的用户来说只需在TX2或none上进行简单几步即可实际测试飞行，对于TX2或none上请使用googel浏览器打开.md文档 
-1. 下载源码：
+待定
 
-```
-git clone https://gitee.com/bingobinlw/some
-```
-编译
-```
-cd some
-catkin_make
-```
-添加bash路经
-```
-echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-2. 
-注：如有疑问请在issues提问
-
-```
-
-```
+**注：如有疑问请在issues提问**
