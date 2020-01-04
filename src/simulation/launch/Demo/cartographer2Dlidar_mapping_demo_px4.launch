@@ -1,7 +1,7 @@
 <launch> 
   <arg name="world_path" default="$(find simulation)/worlds/cloister.world" />
   <!-- 为了不与cartogra发布的odom冲突，这里配置飞机不发布odom tf ,但是注意这样配置并不会影响其发布odom相关的topic-->
-  <arg name="px4_config" default="$(find simulation)/resource/px4_config_noTF.yaml" />
+  <arg name="px4_config" default="$(find simulation)/resource/px4_config.yaml" />
 
 
   <!--建图，cartogra节点将接收2d激光雷达以及无人机的里程计话题-->
