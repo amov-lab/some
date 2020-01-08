@@ -5,10 +5,5 @@ find_package(catkin REQUIRED COMPONENTS
 	rospy
 	std_msgs
 	message_generation
-	move_base
-	map_server
-	amcl
-	cartographer
-	dwa_local_planner
 )
 

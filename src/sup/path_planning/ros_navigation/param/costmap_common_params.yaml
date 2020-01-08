@@ -19,21 +19,21 @@ voxel_layer:
   obstacle_range: 2.5
   raytrace_range: 3.0
   publish_voxel_map: true
-  observation_sources:  scan camera #bump
+  observation_sources:  scan #camera #bump
   scan:
     data_type: LaserScan
-    topic: scan
+    topic: 2Dlidar_scan
     marking: true
     clearing: true
     min_obstacle_height: 0.1
     max_obstacle_height: 0.3
-  camera:
-    data_type: PointCloud2
-    topic: camera/depth/points
-    marking: true
-    clearing: true
-    min_obstacle_height: 0.0
-    max_obstacle_height: 2.0
+  #camera:
+  #  data_type: PointCloud2
+  #  topic: camera/depth/points
+  #  marking: true
+  #  clearing: true
+  #  min_obstacle_height: 0.0
+  #  max_obstacle_height: 2.0
   #bump:
   #  data_type: PointCloud2
   #  topic: mobile_base/sensors/bumper_pointcloud

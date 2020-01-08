@@ -28,7 +28,7 @@
 
     <remap from="odom" to="$(arg odom_topic)"/>
     <remap from="scan" to="$(arg laser_topic)"/>
-    <remap from="cmd_vel" to="/px4_setpoint_vel"/>
+    <remap from="cmd_vel" to="px4_setpoint_vel"/>
 
   </node>
 </launch>
