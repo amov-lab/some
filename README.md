@@ -127,8 +127,8 @@
 下载**ubuntu.sh,requirements.txt**
 
 ```
-wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh`
-`wget
+wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh
+wget
 ```
 
 ```
