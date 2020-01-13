@@ -24,7 +24,7 @@
   ```
   git pull
   ```
-  **注：如有疑问请在issues提问**
+  **注：有任何疑问都可在issues提问:)**
 
 # Overview
 
@@ -369,4 +369,4 @@ roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
 # P200
 待定
 
-**注：如有疑问请在issues提问**
+  **注：有任何疑问都可在issues提问:)**
