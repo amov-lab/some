@@ -128,11 +128,11 @@
 
 ```
 wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh
-wget
+
 ```
 
 ```
-https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requirements.txt
+wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requirements.txt
 ```
 
 然后运行：
