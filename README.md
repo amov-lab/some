@@ -16,8 +16,8 @@
 
   此项目运行环境可以手动安装，或下载已安装好了的iso镜像进行虚拟机安装或实体机安装，链接如下：
 
-  链接：https://pan.baidu.com/s/1ybCbPbPSm-QyXUaZPm0GSw
-  提取码：jkei
+  链接：https://pan.baidu.com/s/1yMvZXezQSPDPkYmSdbEZLA
+  提取码：y3rr
   
   运行各demo之前，请先更新一下仓库:
   
@@ -127,12 +127,12 @@
 下载**ubuntu.sh,requirements.txt**
 
 ```
-wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh`
-`wget
+wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/ubuntu.sh
+
 ```
 
 ```
-https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requirements.txt
+wget https://raw.githubusercontent.com/PX4/Firmware/master/Tools/setup/requirements.txt
 ```
 
 然后运行：

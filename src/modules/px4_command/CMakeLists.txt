@@ -40,6 +40,7 @@ add_executable(set_mode_node src/Utilities/set_mode.cpp)
 add_executable(collision_avoidance_vfh_node src/Application/collision_avoidance_vfh.cpp)
 add_executable(collision_avoidance_matlabvfh_node src/Application/collision_avoidance_matlabvfh.cpp)
 add_executable(circular_node src/Application/circular.cpp)
+add_executable(circular_car_node src/Application/circular_car.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(position_to_mavros_node
@@ -57,8 +58,11 @@ target_link_libraries(collision_avoidance_matlabvfh_node
 target_link_libraries(circular_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(circular_car_node
+  ${catkin_LIBRARIES}
+)
 ## Mark executables and/or libraries for installation
-install(TARGETS position_to_mavros_node set_mode_node collision_avoidance_vfh_node collision_avoidance_matlabvfh_node circular_node
+install(TARGETS position_to_mavros_node set_mode_node collision_avoidance_vfh_node collision_avoidance_matlabvfh_node circular_node circular_car_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
