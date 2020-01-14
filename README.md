@@ -16,8 +16,8 @@
 
   此项目运行环境可以手动安装，或下载已安装好了的iso镜像进行虚拟机安装或实体机安装，链接如下：
 
-  链接：https://pan.baidu.com/s/1ybCbPbPSm-QyXUaZPm0GSw
-  提取码：jkei
+  链接：https://pan.baidu.com/share/init?surl=yMvZXezQSPDPkYmSdbEZLA
+  提取码：y3rr
   
   运行各demo之前，请先更新一下仓库:
   
