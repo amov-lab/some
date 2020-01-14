@@ -16,7 +16,11 @@
 
   此项目运行环境可以手动安装，或下载已安装好了的iso镜像进行虚拟机安装或实体机安装，链接如下：
 
+<<<<<<< HEAD
   链接：https://pan.baidu.com/s/1yMvZXezQSPDPkYmSdbEZLA
+=======
+  链接：https://pan.baidu.com/share/init?surl=yMvZXezQSPDPkYmSdbEZLA
+>>>>>>> 57fb63cc24a079303aed220719a1b3baedb7187e
   提取码：y3rr
   
   运行各demo之前，请先更新一下仓库:
@@ -24,7 +28,7 @@
   ```
   git pull
   ```
-  **注：如有疑问请在issues提问**
+  **注：有任何疑问都可在issues提问:)**
 
 # Overview
 
@@ -369,4 +373,4 @@ roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
 # P200
 待定
 
-**注：如有疑问请在issues提问**
+  **注：有任何疑问都可在issues提问:)**
