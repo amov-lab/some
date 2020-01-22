@@ -6,6 +6,8 @@
 
 - Slam
 
+- map
+
 - image_process
 
 - planning
@@ -366,7 +368,43 @@ roslaunch simulation rtabmap_depthCam_mapping_demo_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20191230/22/38/1/rtabmap3.png)
 
+# map
+
+运行map-Demo之前请先安装必要的功能包，具体请看
+
+```
+roscd octomap
+查看README.md
+```
+
+## octomap
+
+### depth camera 
+
+运行
+
+```
+roslaunch simulation octomap_px4.launch 
+```
+
+建图效果
+
+![image](http://files.amovauto.com:8088/group1/default/20200122/11/36/1/octomap_demp.png)
+
+### 3Dlidar
+
+运行
+
+```
+roslaunch octomap_3Dlidar_px4.launch
+```
+
+建图效果
+
+![image](http://files.amovauto.com:8088/group1/default/20200122/12/04/1/cotomap_3Dlidar.png)
+
 # P200
+
 待定
 
   **注：有任何疑问都可在issues提问:)**

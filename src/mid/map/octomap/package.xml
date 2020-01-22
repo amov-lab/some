@@ -1,11 +1,11 @@
 <package>
-  <name>AmovCar</name>
+  <name>octomap</name>
   <version>0.0.1</version>
   <description>
-  amov car demo
+  A octomap demo of px4,with depth camera or 3D lidar
   </description>
-  <author>bingo</author>
-  <maintainer email="bingobin.lw@gmail.com">bingo</maintainer>
+  <author>lw bingo</author>
+  <maintainer email="bingobin.lw@gmail.com">lw bingo</maintainer>
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
@@ -16,5 +16,7 @@
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
+  <run_depend>controller_manager</run_depend>
+
 
 </package>

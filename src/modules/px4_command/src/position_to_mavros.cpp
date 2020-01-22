@@ -33,8 +33,8 @@ int main(int argc, char** argv){
   //view path in rviz
   nav_msgs::Path body_path;
 
-  std::string target_frame_id = "camera_odom_frame";
-  std::string source_frame_id = "camera_pose_frame";
+  std::string target_frame_id = "carto_odom";
+  std::string source_frame_id = "base_link";
   double output_rate = 30, roll_obj = 0, pitch_obj = 0, yaw_obj = 0;
 
 	node.getParam("target_frame_id", target_frame_id);
@@ -69,7 +69,7 @@ int main(int argc, char** argv){
 				cur_position.pose.orientation.z = quat_body.z();
 				cur_position.pose.orientation.w = quat_body.w();
 				cur_position.header.stamp = ros::Time::now();
-
+				cur_position.header.frame_id = transformStamped.header.frame_id;
     		position_pub.publish(cur_position);
 
 				body_path.header.stamp = cur_position.header.stamp;
