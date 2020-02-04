@@ -7,7 +7,7 @@
           -configuration_directory  $(find ros_slam)/param
           -configuration_basename cartographer_2Dlidar_location_params.lua"
       output="screen">
-    <remap from="scan" to="/2Dlidar_scan" />
+    <remap from="scan" to="/lidar2Dscan" />
     <remap from="imu" to="/mavros/imu/data_raw" />
 
   </node>

@@ -32,17 +32,20 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
+
 add_executable(position_to_mavros_node src/position_to_mavros.cpp)
 add_executable(set_mode_node src/Utilities/set_mode.cpp)
 add_executable(collision_avoidance_vfh_node src/Application/collision_avoidance_vfh.cpp)
 add_executable(collision_avoidance_matlabvfh_node src/Application/collision_avoidance_matlabvfh.cpp)
 add_executable(circular_node src/Application/circular.cpp)
 add_executable(circular_car_node src/Application/circular_car.cpp)
+add_executable(ros_nav_quadrotor_node src/Application/ros_nav_quadrotor.cpp)
 
 ## Specify libraries to link a library or executable target against
+
 target_link_libraries(position_to_mavros_node
   ${catkin_LIBRARIES}
 )
@@ -61,8 +64,17 @@ target_link_libraries(circular_node
 target_link_libraries(circular_car_node
   ${catkin_LIBRARIES}
 )
+target_link_libraries(ros_nav_quadrotor_node
+  ${catkin_LIBRARIES}
+)
+
+## Mark cpp header files for installation
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+)
 ## Mark executables and/or libraries for installation
-install(TARGETS position_to_mavros_node set_mode_node collision_avoidance_vfh_node collision_avoidance_matlabvfh_node circular_node circular_car_node
+install(TARGETS  position_to_mavros_node set_mode_node collision_avoidance_vfh_node collision_avoidance_matlabvfh_node circular_node circular_car_node ros_nav_quadrotor_node 
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

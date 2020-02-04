@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+
+
+  <!-- move_base -->
+  <include file="$(find ros_navigation)/launch/move_base.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find ros_navigation)/rviz/ros_navigation.rviz"/>
+  </group>
+</launch>

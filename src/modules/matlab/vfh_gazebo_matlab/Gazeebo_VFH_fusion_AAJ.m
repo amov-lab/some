@@ -8,7 +8,7 @@ setenv("ROS_MASTER_URI","http://ubuntu:11311");%form vm ubuntu
 rosinit;
 
 %lidar=rossubscriber('/scan');%form tx2 ubuntu
-lidar=rossubscriber('/2Dlidar_scan');%form vm ubuntu
+lidar=rossubscriber('/lidar2Dscan');%form vm ubuntu
 
 uav_pose=rossubscriber('/mavros/local_position/pose');
 robot=rospublisher('/cmd_vel','std_msgs/Float64MultiArray');

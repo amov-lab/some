@@ -403,6 +403,32 @@ roslaunch octomap_3Dlidar_px4.launch
 
 ![image](http://files.amovauto.com:8088/group1/default/20200122/12/04/1/cotomap_3Dlidar.png)
 
+
+# planning
+## ros navigation
+
+运行demo之前请先安装必要的导航包
+
+```
+sudo apt-get install ros-melodic-navigation
+```
+
+运行
+
+```
+roslaunch simulation ros_2Dnav_demo_px4.launch
+```
+
+在键盘控制界面解锁无人机，并控制无人机起飞
+
+然后在rviz界面使用2D Nav Goal 设置目标点，
+
+然后在键盘控制界面输入2运行offboard模式。
+
+![image](http://files.amovauto.com:8088/group1/default/20200205/00/42/1/nav2D_px4.png)
+
+参考于：http://wiki.ros.org/navigation
+
 # P200
 
 待定

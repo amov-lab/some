@@ -280,7 +280,7 @@ int main(int argc, char **argv)
     ros::Subscriber gps_sub = nh.subscribe("/mavros/global_position/global",100,gps_cb);
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("/mavros/state", 100, state_cb);
     ros::Subscriber local_pos_sub = nh.subscribe<geometry_msgs::PoseStamped>("/mavros/local_position/pose", 100, local_pos_cb);
-    ros::Subscriber lidar_sub = nh.subscribe<sensor_msgs::LaserScan>("/2Dlidar_scan", 100, scan_cb);
+    ros::Subscriber lidar_sub = nh.subscribe<sensor_msgs::LaserScan>("/lidar2Dscan", 100, scan_cb);
     ros::Subscriber waypoint_sub = nh.subscribe<mavros_msgs::WaypointList>("/mavros/mission/waypoints", 100, waypoints_cb);
     ros::Subscriber homePos_sub = nh.subscribe<mavros_msgs::HomePosition>("/mavros/home_position/home", 100, home_pos_cb);
     ros::Subscriber head_sub = nh.subscribe<std_msgs::Float64>("/mavros/global_position/compass_hdg", 100, heading_cb);
