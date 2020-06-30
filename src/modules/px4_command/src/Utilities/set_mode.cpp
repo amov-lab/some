@@ -62,7 +62,7 @@ int main(int argc, char **argv)
             // input
             case 0:
                 cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>--------<<<<<<<<<<<<<<<<<<<<<<<<<<< "<< endl;
-                cout << "Input the mode:  0 for Arm,1 for TAKEOFF, 2 for OFFBOARD,3 for LAND, 4 for POSCTL,5 for MISSION  "<<endl;
+                cout << "Input the mode:  0 for OFFBOARD,1 for STABILIZED, 2 for POSCTL,3 for ALTCTL, 4 for arm "<<endl;
                 cin >> flag_1;
 
                 //1000 降落 也可以指向其他任务
@@ -88,46 +88,11 @@ int main(int argc, char **argv)
                 {
                     Num_StateMachine = 5;
                 }
-                else if(flag_1 == 5)
-                {
-                    Num_StateMachine = 6;
-                }
 
                 break;
 
-        //Arm
-        case 1:
-           if(!current_state.armed)
-            {
-                arm_cmd.request.value = true;
-                arming_client.call(arm_cmd);
-
-                cout << "Arming..." <<endl;
-
-            }else
-            {
-                Num_StateMachine = 0;
-                cout << "Arm Susscess!!!" <<endl;
-            }
-            break;
-
-        //TAKEOFF
-        case 2:
-            if(current_state.mode != "AUTO.TAKEOFF")
-            {
-                mode_cmd.request.custom_mode = "AUTO.TAKEOFF";
-                set_mode_client.call(mode_cmd);
-                cout << "Setting to TAKEOFF Mode..." <<endl;
-
-            }else
-            {
-                Num_StateMachine = 0;
-                cout << "Set to AUTO.TAKEOFF Mode Susscess!!!" <<endl;
-            }
-            break;
-
         //OFFBOARD
-        case 3:
+        case 1:
             if(current_state.mode != "OFFBOARD")
             {
                 mode_cmd.request.custom_mode = "OFFBOARD";
@@ -141,23 +106,23 @@ int main(int argc, char **argv)
             }
             break;
 
-        //LAND
-        case 4:
-            if(current_state.mode != "AUTO.LAND")
+        //STABILIZED
+        case 2:
+            if(current_state.mode != "STABILIZED")
             {
-                mode_cmd.request.custom_mode = "AUTO.LAND";
+                mode_cmd.request.custom_mode = "STABILIZED";
                 set_mode_client.call(mode_cmd);
-                cout << "Setting to LAND Mode..." <<endl;
+                cout << "Setting to STABILIZED Mode..." <<endl;
 
             }else
             {
                 Num_StateMachine = 0;
-                cout << "Set to LAND Mode Susscess!!!" <<endl;
+                cout << "Set to STABILIZED Mode Susscess!!!" <<endl;
             }
             break;
 
         //POSCTL
-        case 5:
+        case 3:
             if(current_state.mode != "POSCTL")
             {
                 mode_cmd.request.custom_mode = "POSCTL";
@@ -171,20 +136,37 @@ int main(int argc, char **argv)
             }
             break;
 
-        //MISSION
-        case 6:
-            if(current_state.mode != "AUTO.MISSION")
+        //ALTCTL
+        case 4:
+            if(current_state.mode != "ALTCTL")
             {
-                mode_cmd.request.custom_mode = "AUTO.MISSION";
+                mode_cmd.request.custom_mode = "ALTCTL";
                 set_mode_client.call(mode_cmd);
-                cout << "Setting to MISSION Mode..." <<endl;
+                cout << "Setting to ALTCTL Mode..." <<endl;
 
             }else
             {
                 Num_StateMachine = 0;
-                cout << "Set to RTL MISSION Susscess!!!" <<endl;
+                cout << "Set to ALTCTL Mode Susscess!!!" <<endl;
             }
             break;
+
+        //arm
+        case 5:
+            if(!current_state.armed)
+            {
+                arm_cmd.request.value = true;
+                arming_client.call(arm_cmd);
+
+                cout << "Arming..." <<endl;
+
+            }else
+            {
+                Num_StateMachine = 0;
+                cout << "Arm Susscess!!!" <<endl;
+            }
+            break;
+
         }
 
         //执行回调函数
