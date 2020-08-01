@@ -4,7 +4,7 @@
 	desire_z：期望圆半径 
 	desire_Radius：期望高度-->
 	
-  <arg name="world_path" default="$(find simulation)/worlds/densityColumn.world" />
+  <arg name="world_path" default="$(find simulation)/worlds/empty.world" />
 
   <include file="$(find simulation)/launch/px4/iris_px4.launch">
     <arg name="world_path" value="$(arg world_path)" />

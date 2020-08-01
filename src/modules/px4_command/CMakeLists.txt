@@ -184,7 +184,7 @@ add_executable(collision_avoidance_matlabvfh_node src/Application/collision_avoi
 add_dependencies(collision_avoidance_matlabvfh_node px4_command_gencpp)
 target_link_libraries(collision_avoidance_matlabvfh_node ${catkin_LIBRARIES})
 
-add_executable(circular_node src/Application/collision_avoidance_vfh.cpp)
+add_executable(circular_node src/Application/circular.cpp)
 add_dependencies(circular_node px4_command_gencpp)
 target_link_libraries(circular_node ${catkin_LIBRARIES})
 

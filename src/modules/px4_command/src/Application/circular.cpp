@@ -208,6 +208,7 @@ int main(int argc, char **argv)
     {
 		FlyState_update();
  		ros::spinOnce();
+
         rate.sleep();
     }
 
